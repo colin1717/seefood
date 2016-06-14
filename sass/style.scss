@@ -29,16 +29,18 @@ a {
   background-color: $cream;
 
   .sidebar {
-    background-color: $grey;
+    background-color: $cream;
     height: 100%;
     padding: 0;
 
     .menubox {
       border: 2px solid $cream;
       height: 75px;
+      background-color: $grey;
 
       h3 {
         color: $olive;
+        text-align: center;
       }
     }
   }

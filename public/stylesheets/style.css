@@ -18,14 +18,16 @@ a {
   height: 675px;
   background-color: #f6ffe0; }
   .content .sidebar {
-    background-color: #e2f0d6;
+    background-color: #f6ffe0;
     height: 100%;
     padding: 0; }
     .content .sidebar .menubox {
       border: 2px solid #f6ffe0;
-      height: 75px; }
+      height: 75px;
+      background-color: #e2f0d6; }
       .content .sidebar .menubox h3 {
-        color: #95ab63; }
+        color: #95ab63;
+        text-align: center; }
   .content .rightcontent {
     background-color: #f6ffe0;
     height: 100%; }

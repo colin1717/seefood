@@ -10,7 +10,7 @@ function getMenuItems(){
   })
     .done(function(data, textStatus){
       console.log(data);
-      addMenuBox(data);
+      loopThroughMenuItems(data);
     })
     .fail(function(data, textStatus){
       console.log("Error getting food items.  Status: " + textStatus);
@@ -18,5 +18,11 @@ function getMenuItems(){
 }
 
 function addMenuBox(foodItem) {
-  $('#sidebar-menu').prepend('<div class="menubox"><h3>'+ foodItem[0].name +'</h3></div>')
+  $('#sidebar-menu').prepend('<div class="menubox"><h3>'+ foodItem.name +'</h3></div>')
+}
+
+function loopThroughMenuItems(data) {
+  for (var i = 0; i < data.length; i++){
+    addMenuBox(data[i]);
+  }
 }
