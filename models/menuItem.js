@@ -6,4 +6,5 @@ var menuItemSchema = {
 }
 
 var MenuItem = mongoose.model('MenuItem', menuItemSchema);
+
 module.exports = MenuItem;
