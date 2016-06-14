@@ -14,7 +14,7 @@ a {
   .nav .logo {
     font-family: 'Pacifico', cursive;
     font-size: 46px;
-    margin-left: 4%; }
+    margin-left: 5%; }
 
 .content {
   height: 675px;
@@ -44,3 +44,13 @@ a {
       position: fixed;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px; }
+      .content .rightcontent .photobox .photoframe {
+        background-color: #f6ffe0;
+        height: 350px;
+        margin-top: 22px;
+        border-radius: 7px; }
+        .content .rightcontent .photobox .photoframe img {
+          height: 275px;
+          width: 275px;
+          margin-top: 15px;
+          margin-left: 7px; }
