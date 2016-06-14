@@ -20,11 +20,27 @@ a {
   .logo {
     font-family: 'Pacifico', cursive;
     font-size: 46px;
-    margin: -5px 0 0 15px;
+    margin-left: 4%;
   }
 }
 
 .content {
-  height: 800px;
+  height: 675px;
   background-color: $cream;
+
+  .sidebar {
+    background-color: $grey;
+    height: 100%;
+    padding: 0;
+
+    .menubox {
+      border: 2px solid $cream;
+      height: 75px;
+    }
+  }
+
+  .rightcontent {
+    background-color: $cream;
+    height: 100%;
+  }
 }
