@@ -3,6 +3,10 @@ $('#test').click(function(){
   $('#test').hide();
 })
 
+$('#phototest').click(function(){
+  addPhoto();
+})
+
 function getMenuItems(){
   $.ajax({
     url: '/menuitems',
@@ -34,3 +38,9 @@ function loopThroughMenuItems(data) {
 function showPhotoBox() {
   $('.photobox').removeClass('hidden');
 }
+
+function addPhoto(foodItem) {
+  $('#photostrip').prepend('<div class="photoframe col-md-3"><div class="image"><img src="/images/seefood_images/addnew.jpg"></div></div>');
+}
+
+//add to ajax call so that images populate at beginning and the div is revealed when the specific menu item is clicked on

@@ -63,17 +63,21 @@ a {
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
 
-      .photoframe {
-        background-color: $cream;
-        height: 350px;
-        margin-top: 22px;
-        border-radius: 7px;
+      .row {
+        margin-left: 15px;
 
-        img {
-          height: 275px;
-          width: 275px;
-          margin-top: 15px;
-          margin-left: 7px;
+        .photoframe {
+          background-color: $cream;
+          height: 350px;
+          margin: 22px 5px 0 5px;
+          border-radius: 7px;
+
+          img {
+            height: 275px;
+            width: 275px;
+            margin-top: 15px;
+            margin-left: 7px;
+          }
         }
       }
     }
