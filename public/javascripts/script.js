@@ -18,7 +18,7 @@ function getMenuItems(){
 }
 
 function addMenuBox(foodItem) {
-  $('#sidebar-menu').prepend('<div class="menubox"><h3>'+ foodItem.name +'</h3></div>')
+  $('#sidebar-menu').append('<div class="menubox"><h3>'+ foodItem.name +'</h3></div>')
 }
 
 function loopThroughMenuItems(data) {

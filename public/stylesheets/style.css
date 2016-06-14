@@ -24,7 +24,8 @@ a {
     .content .sidebar .menubox {
       border: 2px solid #f6ffe0;
       height: 75px;
-      background-color: #e2f0d6; }
+      background-color: #e2f0d6;
+      cursor: pointer; }
       .content .sidebar .menubox h3 {
         color: #95ab63;
         text-align: center; }
