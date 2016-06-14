@@ -24,6 +24,8 @@ a {
     .content .sidebar .menubox {
       border: 2px solid #f6ffe0;
       height: 75px; }
+      .content .sidebar .menubox h3 {
+        color: #95ab63; }
   .content .rightcontent {
     background-color: #f6ffe0;
     height: 100%; }
