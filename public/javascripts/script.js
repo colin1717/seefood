@@ -1,5 +1,6 @@
 $('#test').click(function(){
   getMenuItems();
+  $('#test').hide();
 })
 
 function getMenuItems(){

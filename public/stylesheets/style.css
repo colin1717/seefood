@@ -8,7 +8,9 @@ a {
 .nav {
   height: 65px;
   width: 100%;
-  background-color: #95ab63; }
+  background-color: #95ab63;
+  position: fixed;
+  z-index: 1; }
   .nav .logo {
     font-family: 'Pacifico', cursive;
     font-size: 46px;
@@ -16,7 +18,8 @@ a {
 
 .content {
   height: 675px;
-  background-color: #f6ffe0; }
+  background-color: #f6ffe0;
+  padding-top: 65px; }
   .content .sidebar {
     background-color: #f6ffe0;
     height: 100%;
@@ -31,4 +34,13 @@ a {
         text-align: center; }
   .content .rightcontent {
     background-color: #f6ffe0;
-    height: 100%; }
+    height: 100%;
+    padding-right: 0; }
+    .content .rightcontent .photobox {
+      width: 100%;
+      height: 400px;
+      background-color: #e2f0d6;
+      margin-top: 40px;
+      position: fixed;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px; }
