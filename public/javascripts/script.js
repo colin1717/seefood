@@ -18,7 +18,10 @@ function getMenuItems(){
 }
 
 function addMenuBox(foodItem) {
-  $('#sidebar-menu').append('<div class="menubox"><h3>'+ foodItem.name +'</h3></div>')
+  $('#sidebar-menu').append('<div id="'+ foodItem._id +'" class="menubox"><h3>'+ foodItem.name +'</h3></div>');
+  $('#'+ foodItem._id +'').click(function(){
+    alert(foodItem._id);
+  })
 }
 
 function loopThroughMenuItems(data) {
