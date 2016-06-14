@@ -1,0 +1,30 @@
+$darkBlue: rgb(16,24,43);
+$olive: rgb(149,171,99);
+$lightGreen: rgb(189,214,43);
+$grey: rgb(226,240,214);
+$cream: rgb(246,255,224);
+
+body {
+  background-color: $cream;
+  margin: 0px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.nav {
+  height: 65px;
+  width: 100%;
+  background-color: $olive;
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 46px;
+    margin: -5px 0 0 15px;
+  }
+}
+
+.content {
+  height: 800px;
+  background-color: $cream;
+}
