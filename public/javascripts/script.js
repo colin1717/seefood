@@ -25,6 +25,10 @@ function getMenuItems(){
 function addMenuBox(foodItem) {
   $('#sidebar-menu').append('<div id="'+ foodItem._id +'" class="menubox"><h3>'+ foodItem.name +'</h3></div>');
   $('#'+ foodItem._id +'').click(function(){
+    //add photo of specific food item
+    console.log(foodItem);
+    addPhoto(foodItem);
+
     showPhotoBox();
   })
 }
@@ -35,12 +39,16 @@ function loopThroughMenuItems(data) {
   }
 }
 
+function addPhoto(foodItem) {
+  console.log(foodItem.photos);
+  $('.addedphoto').remove();
+  $('#photostrip').prepend('<div class="photoframe col-md-3 addedphoto"><div class="image"><img src="' + foodItem.photos[0].path +'"></div></div>');
+}
+
+
 function showPhotoBox() {
   $('.photobox').removeClass('hidden');
 }
 
-function addPhoto(foodItem) {
-  $('#photostrip').prepend('<div class="photoframe col-md-3"><div class="image"><img src="/images/seefood_images/addnew.jpg"></div></div>');
-}
 
 //add to ajax call so that images populate at beginning and the div is revealed when the specific menu item is clicked on
