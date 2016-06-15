@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var MenuItem = require('../models/menuItem');
+var multer = require('multer');
+var s3 = require('multer-storage-s3')
+
+
 
 /* GET /menuItems  */
 router.get('/', function(req, res,next){
@@ -13,6 +17,24 @@ router.get('/', function(req, res,next){
     }
   });
 });
+
+/* multer setup */
+var storage = s3({
+    destination : function( req, file, cb ) {
+        cb( null, 'photos' );
+    },
+    filename    : function( req, file, cb ) {
+        cb( null, file.fieldname + '-' + Date.now() );
+    },
+
+    bucket      : 'seefood',
+    region      : 'us-west-2'
+});
+
+var uploadMiddleware = multer({
+   storage: storage,
+   limits: {fileSize: 500000, files:1}
+  });
 
 /* POST /menuitems */
 router.post('/', function(req, res, next){
@@ -40,6 +62,24 @@ router.use('/:menuItemId', function(req, res, next){
       }
     }
   });
+});
+
+/* Multer upload to S3 */
+router.post('/:menuItemId/upload', uploadMiddleware.any(), function(req, res, next) {
+  //res.send(req.files);
+  console.log(req.files);
+  console.log(req.files[0].s3);
+  const menuItem = res.menuItem;
+  const photos = menuItem.photos;
+  photos.push({ "path": req.files[0].s3.Location })
+  $set: { photos: photos }
+  menuItem.save(function(err){
+    if (err) {
+      res.status(500).send();
+    } else {
+      res.send(req.files);
+    }
+  })
 });
 
 /* Get /menuItems/:menuItemId */
