@@ -42,9 +42,16 @@ function loopThroughMenuItems(data) {
 function addPhoto(foodItem) {
   console.log(foodItem.photos);
   $('.addedphoto').remove();
-  $('#photostrip').prepend('<div class="photoframe col-md-3 addedphoto"><div class="image"><img src="' + foodItem.photos[0].path +'"></div></div><div class="photoframe col-md-3"><div class="image"><img src="/images/seefood_images/addnew.jpg" id="addnew"><form action="/menuitems/'+ foodItem._id +'/upload" method="POST" enctype="multipart/form-data"><input type="file" name="image"><input type="submit" value="Add food item."></form></div></div>');
+  loopThroughFoodItemsPhotos(foodItem);
+  $('#photostrip').append('<div class="photoframe col-md-3"><div class="image"><img src="/images/seefood_images/addnew.jpg" id="addnew"><form action="/menuitems/'+ foodItem._id +'/upload" method="POST" enctype="multipart/form-data"><input type="file" name="image"><input type="submit" value="Add food item."></form></div></div>');
+  $('#photostrip').width($(window).width() - ($(window).width()/3.5) );
 }
 
+function loopThroughFoodItemsPhotos(foodItem) {
+  for (var i = 0; i < foodItem.photos.length; i++) {
+    $('#photostrip').prepend('<div class="photoframe col-md-3 addedphoto"><div class="image"><img src="' + foodItem.photos[i].path +'"></div></div>')
+  }
+}
 
 function showPhotoBox() {
   $('.photobox').removeClass('hidden');

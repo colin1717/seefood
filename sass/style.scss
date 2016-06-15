@@ -65,6 +65,9 @@ a {
 
       .row {
         margin-left: 15px;
+        display: flex;
+        overflow-x: auto;
+        width: 100%;
 
         .photoframe {
           background-color: $cream;
@@ -73,6 +76,7 @@ a {
           border-radius: 7px;
           width: 320px;
           min-width: 320px;
+          flex: 0 0 auto;
 
           img {
             height: 275px;

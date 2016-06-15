@@ -45,14 +45,18 @@ a {
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px; }
       .content .rightcontent .photobox .row {
-        margin-left: 15px; }
+        margin-left: 15px;
+        display: flex;
+        overflow-x: auto;
+        width: 100%; }
         .content .rightcontent .photobox .row .photoframe {
           background-color: #f6ffe0;
           height: 350px;
           margin: 22px 5px 0 5px;
           border-radius: 7px;
           width: 320px;
-          min-width: 320px; }
+          min-width: 320px;
+          flex: 0 0 auto; }
           .content .rightcontent .photobox .row .photoframe img {
             height: 275px;
             width: 275px;
