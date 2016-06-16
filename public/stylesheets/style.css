@@ -57,6 +57,16 @@
   .copy h6 {
     font-family: 'Roboto Condensed', sans-serif; }
 
+.loginbody .logo {
+  margin-right: 80%; }
+
+.loginbody .loginbox {
+  text-align: center;
+  padding-top: 80px; }
+
+.loginbody .button {
+  margin-top: 10px; }
+
 body {
   background-color: #f6ffe0;
   margin: 0px; }
