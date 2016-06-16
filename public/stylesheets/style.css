@@ -76,3 +76,10 @@ a {
             width: 275px;
             margin-top: 15px;
             margin-left: 7px; }
+          .content .rightcontent .photobox .row .photoframe form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 5px; }
+            .content .rightcontent .photobox .row .photoframe form input {
+              width: 175px;
+              margin-left: 50px; }
