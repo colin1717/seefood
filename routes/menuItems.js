@@ -36,8 +36,17 @@ var uploadMiddleware = multer({
    limits: {fileSize: 500000, files:1}
   });
 
+//middleware to check if user is logged in
+function checkIfUserIsLoggedIn(req, res, next){
+  if (req.isAuthenticated()){
+    next();
+  } else {
+    res.redirect('/');
+  }
+}
+
 /* POST /menuitems */
-router.post('/', function(req, res, next){
+router.post('/',checkIfUserIsLoggedIn, function(req, res, next){
   var menuItem = new MenuItem(req.body);
   menuItem.save(function(err) {
     if (err) {
@@ -65,7 +74,7 @@ router.use('/:menuItemId', function(req, res, next){
 });
 
 /* Multer upload to S3 */
-router.post('/:menuItemId/upload', uploadMiddleware.any(), function(req, res, next) {
+router.post('/:menuItemId/upload',checkIfUserIsLoggedIn, uploadMiddleware.any(), function(req, res, next) {
   //res.send(req.files);
   console.log(req.files);
   console.log(req.files[0].s3);

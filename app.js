@@ -4,14 +4,34 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+
 var mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONN_SEEFOOD);
+
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
+var User = require('./models/user');
+passport.use(User.createStrategy());
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var menuitems = require('./routes/menuItems');
 
 var app = express();
+
+//express session middleware
+app.use(session({
+  secret: process.env.SESSION_KEY || 'foobar',
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/menuitems', menuitems); 
+app.use('/menuitems', menuitems);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
