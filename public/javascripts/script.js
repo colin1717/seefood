@@ -4,6 +4,7 @@ $('#hamburger').click(function(){
 
 $('#contigo').click(function(){
   getMenuItems();
+  $('.copy').hide();
 })
 
 $('#login').click(function(){
