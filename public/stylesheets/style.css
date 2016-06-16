@@ -1,20 +1,34 @@
+.nav {
+  height: 65px;
+  width: 100%;
+  background-color: #95ab63;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1; }
+  .nav .logo {
+    margin-right: 70%;
+    flex-shrink: 1;
+    font-family: 'Pacifico', cursive;
+    font-size: 36pt;
+    flex-basis: auto; }
+  .nav .space {
+    flex-shrink: 0;
+    width: 5%; }
+  .nav .hamburger {
+    flex-shrink: 1; }
+    .nav .hamburger:hover {
+      background-color: #809550; }
+    .nav .hamburger img {
+      height: 65px; }
+
 body {
   background-color: #f6ffe0;
   margin: 0px; }
 
 a {
   color: #00B7FF; }
-
-.nav {
-  height: 65px;
-  width: 100%;
-  background-color: #95ab63;
-  position: fixed;
-  z-index: 1; }
-  .nav .logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 46px;
-    margin-left: 5%; }
 
 .content {
   height: 675px;

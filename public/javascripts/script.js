@@ -1,6 +1,5 @@
-$('#test').click(function(){
+$('#hamburger').click(function(){
   getMenuItems();
-  $('#test').hide();
 })
 
 $('#phototest').click(function(){
@@ -43,7 +42,7 @@ function addPhoto(foodItem) {
   console.log(foodItem.photos);
   $('.addedphoto').remove();
   loopThroughFoodItemsPhotos(foodItem);
-  $('#photostrip').append('<div class="photoframe col-md-3"><div class="image"><img src="/images/seefood_images/addnew.jpg" id="addnew"><form action="/menuitems/'+ foodItem._id +'/upload" method="POST" enctype="multipart/form-data"><input type="file" name="image"><input type="submit" value="Add food item."></form></div></div>');
+  $('#photostrip').append('<div class="photoframe col-md-3 addedphoto"><div class="image"><img src="/images/seefood_images/addnew.jpg" id="addnew"><form action="/menuitems/'+ foodItem._id +'/upload" method="POST" enctype="multipart/form-data"><input type="file" name="image"><input type="submit" value="Add food item."></form></div></div>');
   $('#photostrip').width($(window).width() - ($(window).width()/3.5) );
 }
 

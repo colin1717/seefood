@@ -4,6 +4,8 @@ $lightGreen: rgb(189,214,43);
 $grey: rgb(226,240,214);
 $cream: rgb(246,255,224);
 
+@import '_nav.scss';
+
 body {
   background-color: $cream;
   margin: 0px;
@@ -11,19 +13,6 @@ body {
 
 a {
   color: #00B7FF;
-}
-
-.nav {
-  height: 65px;
-  width: 100%;
-  background-color: $olive;
-  position: fixed;
-  z-index: 1;
-  .logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 46px;
-    margin-left: 5%;
-  }
 }
 
 .content {
