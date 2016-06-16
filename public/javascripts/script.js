@@ -2,8 +2,12 @@ $('#hamburger').click(function(){
   $('.dropdown').toggleClass('hidden');
 })
 
-$('#phototest').click(function(){
-  addPhoto();
+$('#contigo').click(function(){
+  getMenuItems();
+})
+
+$('#login').click(function(){
+  $(location).attr('href', './login');
 })
 
 function getMenuItems(){
@@ -22,7 +26,7 @@ function getMenuItems(){
 }
 
 function addMenuBox(foodItem) {
-  $('#sidebar-menu').append('<div id="'+ foodItem._id +'" class="menubox"><h3>'+ foodItem.name +'</h3></div>');
+  $('#sidebar-menu').append('<div id="'+ foodItem._id +'" class="menubox addedbox"><h3>'+ foodItem.name +'</h3></div>');
   $('#'+ foodItem._id +'').click(function(){
     //add photo of specific food item
     console.log(foodItem);
@@ -33,6 +37,7 @@ function addMenuBox(foodItem) {
 }
 
 function loopThroughMenuItems(data) {
+  $('.addedbox').remove();
   for (var i = 0; i < data.length; i++){
     addMenuBox(data[i]);
   }

@@ -23,13 +23,26 @@
     .nav .hamburger img {
       height: 65px; }
     .nav .hamburger .dropdown {
-      background-color: #e2f0d6;
       height: 200px;
       width: 195px;
       position: absolute;
       left: 80%;
       border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px; }
+      border-bottom-right-radius: 5px;
+      cursor: pointer; }
+      .nav .hamburger .dropdown .menu-option {
+        color: #95ab63;
+        font-family: 'Pacifico', cursive;
+        text-align: center;
+        border: solid 2px #95ab63;
+        border-radius: 5px;
+        background-color: #e2f0d6;
+        height: 70px;
+        width: 100%;
+        margin-top: 5px; }
+        .nav .hamburger .dropdown .menu-option p {
+          padding: 12px;
+          font-size: 20pt; }
 
 body {
   background-color: #f6ffe0;

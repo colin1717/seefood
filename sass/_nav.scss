@@ -32,13 +32,30 @@
     }
 
     .dropdown {
-      background-color: $grey;
       height: 200px;
       width: 195px;
       position: absolute;
       left: 80%;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
+      cursor: pointer;
+
+      .menu-option {
+        color: $olive;
+        font-family: 'Pacifico', cursive;
+        text-align: center;
+        border: solid 2px $olive;
+        border-radius: 5px;
+        background-color: $grey;
+        height: 70px;
+        width: 100%;
+        margin-top: 5px;
+
+        p {
+          padding: 12px;
+          font-size: 20pt;
+        }
+      }
     }
   }
 }
