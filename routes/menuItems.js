@@ -76,8 +76,6 @@ router.use('/:menuItemId', function(req, res, next){
 /* Multer upload to S3 */
 router.post('/:menuItemId/upload',checkIfUserIsLoggedIn, uploadMiddleware.any(), function(req, res, next) {
   //res.send(req.files);
-  console.log(req.files);
-  console.log(req.files[0].s3);
   const menuItem = res.menuItem;
   const photos = menuItem.photos;
   photos.push({ "path": req.files[0].s3.Location })
