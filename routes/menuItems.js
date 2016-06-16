@@ -41,7 +41,7 @@ function checkIfUserIsLoggedIn(req, res, next){
   if (req.isAuthenticated()){
     next();
   } else {
-    res.redirect('/');
+    res.redirect('/login');
   }
 }
 
@@ -86,7 +86,7 @@ router.post('/:menuItemId/upload',checkIfUserIsLoggedIn, uploadMiddleware.any(),
     if (err) {
       res.status(500).send();
     } else {
-      res.send(req.files);
+      res.redirect('/');
     }
   })
 });
