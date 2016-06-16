@@ -83,3 +83,5 @@ a {
             .content .rightcontent .photobox .row .photoframe form input {
               width: 175px;
               margin-left: 50px; }
+            .content .rightcontent .photobox .row .photoframe form .choosefile {
+              margin-bottom: 2px; }
