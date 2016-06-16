@@ -1,5 +1,5 @@
 $('#hamburger').click(function(){
-  getMenuItems();
+  $('.dropdown').toggleClass('hidden');
 })
 
 $('#phototest').click(function(){

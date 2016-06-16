@@ -30,5 +30,15 @@
     img {
       height: 65px;
     }
+
+    .dropdown {
+      background-color: $grey;
+      height: 200px;
+      width: 195px;
+      position: absolute;
+      left: 80%;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
   }
 }
