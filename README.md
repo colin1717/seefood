@@ -8,6 +8,7 @@ It is built with Node.js, Express.js, and MongoDB.
 User's must be authenticated before POSTing images to the database.  SeeFood uses Passport and the passport local strategy for user authentication.
 
 I used the NPM Multer package to save files locally and then used Mutler-Storage-S3 to save the images to AWS S3. 
+When researching storing images with node this was the most helpful video I found: https://www.youtube.com/watch?v=WWHE3mwe1vs. 
 
 ## Wireframes
 ![alt tag](/public/images/wireframe.jpg?raw=true)
