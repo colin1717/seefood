@@ -1,3 +1,5 @@
+/* Event listeners */
+
 $('#hamburger').click(function(){
   $('.dropdown').toggleClass('hidden');
 })
@@ -10,6 +12,9 @@ $('#contigo').click(function(){
 $('#login').click(function(){
   $(location).attr('href', './login');
 })
+
+
+/* functions */
 
 function getMenuItems(){
   $.ajax({
@@ -25,6 +30,13 @@ function getMenuItems(){
     })
 }
 
+function loopThroughMenuItems(data) {
+  $('.addedbox').remove();
+  for (var i = 0; i < data.length; i++){
+    addMenuBox(data[i]);
+  }
+}
+
 function addMenuBox(foodItem) {
   $('#sidebar-menu').append('<div id="'+ foodItem._id +'" class="menubox addedbox"><h3>'+ foodItem.name +'</h3></div>');
   $('#'+ foodItem._id +'').click(function(){
@@ -35,11 +47,8 @@ function addMenuBox(foodItem) {
   })
 }
 
-function loopThroughMenuItems(data) {
-  $('.addedbox').remove();
-  for (var i = 0; i < data.length; i++){
-    addMenuBox(data[i]);
-  }
+function showPhotoBox() {
+  $('.photobox').removeClass('hidden');
 }
 
 function addPhoto(foodItem) {
@@ -53,8 +62,4 @@ function loopThroughFoodItemsPhotos(foodItem) {
   for (var i = 0; i < foodItem.photos.length; i++) {
     $('#photostrip').prepend('<div class="photoframe col-md-3 addedphoto"><div class="image"><img src="' + foodItem.photos[i].path +'"></div></div>')
   }
-}
-
-function showPhotoBox() {
-  $('.photobox').removeClass('hidden');
 }
